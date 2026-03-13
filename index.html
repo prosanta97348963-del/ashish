@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Computer Science Educator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #111827);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- BACKGROUND SHAPES --- */
+        .background-shapes {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            animation: float 20s infinite linear;
+            border-radius: 4px;
+        }
+        @keyframes float {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        }
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+        }
+        .hero-text h1 {
+            font-family: 'Fira Code', monospace;
+            font-size: 3rem;
+            margin: 0;
+            color: var(--accent);
+        }
+
+        /* --- CARDS --- */
+        .section-header {
+            margin-top: 4rem;
+            font-family: 'Fira Code', monospace;
+            color: var(--accent);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .tag {
+            font-size: 0.7rem;
+            background: rgba(14, 165, 233, 0.2);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape" style="width: 80px; height: 80px; left: 10%; animation-duration: 25s;"></div>
+        <div class="shape" style="width: 40px; height: 40px; left: 75%; animation-duration: 18s; animation-delay: 2s;"></div>
+        <div class="shape" style="width: 100px; height: 100px; left: 40%; animation-duration: 30s; animation-delay: 5s;"></div>
+        <div class="shape" style="width: 20px; height: 20px; left: 90%; animation-duration: 15s;"></div>
+    </div>
+
+    <div class="container">
+        <header class="hero">
+            <img src="IMG-20250120-WA0026.jpg" alt="Profile Photo" class="hero-img">
+            <div class="hero-text">
+                <h1>ASHISH MONDAL</h1>
+                <p>Hi, I'm Ashish👋A curious tech guy who loves playing with computers, building websites, and turning random ideas into digital projects.
+
+                    I break things, fix them, and learn something new every day.
+                                        Basically, I mix creativity + computer knowledge to make cool stuff on the internet. 🚀
+</p>
+            </div>
+        </header>
+
+        <h2 class="section-header">01. Teaching Material (PDF)</h2>
+        <div class="grid">
+            <a href="LINK_TO_PDF" class="card">
+                <span class="tag">PDF</span>
+                <h3>Course Syllabus</h3>
+                <p>Download the full curriculum for this semester.</p>
+            </a>
+            <a href="LINK_TO_PDF" class="card">
+                <span class="tag">PDF</span>
+                <h3>Python Basics Quiz</h3>
+                <p>A quick review sheet for the upcoming exam.</p>
+            </a>
+        </div>
+
+        <h2 class="section-header">02. Video Lessons</h2>
+        <div class="grid">
+            <a href="LINK_TO_VIDEO" class="card">
+                <span class="tag">VIDEO</span>
+                <h3>Hardware Components</h3>
+                <p>A video tour of what's inside a computer.</p>
+            </a>
+            <a href="LINK_TO_VIDEO" class="card">
+                <span class="tag">VIDEO</span>
+                <h3>Excel for Beginners</h3>
+                <p>Learn formulas and functions in 10 minutes.</p>
+            </a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 4rem; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 [Your Name] | Computer Teacher Portfolio
+    </footer>
+
+</body>
+</html>
